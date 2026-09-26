@@ -51,6 +51,8 @@ async function sendTelegram(message) {
 
   await page.waitForTimeout(10000);
 
+  await page.screenshot({ path: 'psv.png', fullPage: true });
+
   console.log('URL na laden:', page.url());
 
   const text = await page.locator('body').innerText();
